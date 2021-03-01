@@ -1,8 +1,4 @@
-let total = (addCount, addPrice, currentTotal);
-
-function add ()
-{
-    let res = (addPrice * addCount) + currentTotal;
-    console.log(res);
-    return(addCount * addPrice) + currentTotal;
+function total(addCount, addPrice, currentTotal = 0) {
+    let result = ((addCount * addPrice) + Number(currentTotal)).toFixed(2);
+    return result;
 }

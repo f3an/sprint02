@@ -1,11 +1,46 @@
-const calc = new Calculator ();
-console.log(
-    calc
-        .init(2)
-        .add(2)
-        .mul(3)
-        .div(4)
-        .sub(2).result
-);
+function Calculator() {}
 
-calc.alert();
+Calculator.prototype.init = function(x) {
+    if (isNaN(x)) {
+        alert("err");
+    } else {
+        this.result = Number(x);
+        return this;
+    }
+}
+
+Calculator.prototype.add = function(x) {
+    if (isNaN(x) || this.result === undefined) {
+        alert("err");
+    } else {
+        this.result += Number(x);
+        return this;
+    }
+}
+Calculator.prototype.mul = function(x) {
+    if (isNaN(x) || this.result === undefined) {
+        alert("err");
+    } else {
+        this.result *= Number(x);
+        return this;
+    }
+}
+Calculator.prototype.div = function(x) {
+    if (isNaN(x) || this.result === undefined) {
+        alert("err");
+    } else {
+        this.result /= Number(x);
+        return this;
+    }
+}
+Calculator.prototype.sub = function(x) {
+    if (isNaN(x) || this.result === undefined) {
+        alert("err");
+    } else {
+        this.result -= Number(x);
+        return this;
+    }
+}
+Calculator.prototype.alert = function(x) {
+    alert(this.result);
+}

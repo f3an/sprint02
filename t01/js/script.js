@@ -1,28 +1,22 @@
-
-const number = 1;
-alert("number is "+ number);
-const bigInt = 12n;
-alert("BigInt is "+ bigInt);
-let str = "Hello";
-alert("String is "+ str);
+let num = 42;
+let bigint = 42n;
+let str = 'text';
 let bool = true;
-alert("Boolean is "+ bool);
-let age = null;
-alert("Null is "+ age);
-let ss;
-alert("undefined is "+ss);
+let nul = null;
+let undef;
+let obj = { name: "John", age: 32 }
+let sym = Symbol('foo');
 
-typeof Objects;
-alert("Object is " + Object);
-
-typeof Symbol;
-alert("Symbol is "+Symbol);
-
-function func() {
-    let result = [];
-    let a = 4;
-    let b = 5;
-    result = a + b;
+function fun() {
+    alert("hello")
 }
-alert("function is " + func);
 
+alert("Number is " + typeof(num));
+alert("BigInt is " + typeof(bigint));
+alert("String is " + typeof(str));
+alert("Boolean is " + typeof(bool));
+alert("Null is " + typeof(nul));
+alert("Undefined is " + typeof(undef));
+alert("Object is " + typeof(obj));
+alert("Symbol is " + typeof(sym));
+alert("Function is " + typeof(fun));

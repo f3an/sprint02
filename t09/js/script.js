@@ -1,44 +1,41 @@
-const date0= new Date(1993, 11, 1);
-const date1= new Date(1998, 0, -33);
-const date2= new Date('42 03:24:00');
-
-function appendLeadingZeroes(n)
-{
-    if(n <= 9){
-      return "0" + n;
+function appendLeadingZeroes(n) {
+    if (n <= 9) {
+        return "0" + n
     }
-    return n;
+    return n
 }
 
-function formeteddate(x)
-{
-    let str = appendLeadingZeroes(x.getDate())+ "." + appendLeadingZeroes(x.getMonth()+1) + "."+x.getFullYear()+" "+ appendLeadingZeroes(x.getHours()) + ":" + appendLeadingZeroes(x.getMinutes()) +" "+dayweek(x);
-    return str;
+let getFormattedDate = (x) => {
+
+    let date = appendLeadingZeroes(x.getDate()) + "." +
+        appendLeadingZeroes(x.getMonth() + 1) + "." +
+        x.getFullYear() + " " +
+        appendLeadingZeroes(x.getHours()) + ":" +
+        appendLeadingZeroes(x.getMinutes()) + " " +
+        dayweek(x);
+
+    return date;
 }
-function dayweek(a)
-{   
-    let x = a.getDay();
-    switch (x)
-    {
+
+let dayweek = (a) => {
+    let x = a.getDay()
+
+    switch (x) {
         case 0:
-            return "Sunday";
+            return "Sunday"
         case 1:
-            return "Monday";
+            return "Monday"
         case 2:
-            return "Tuesday";
+            return "Tuesday"
         case 3:
-            return "Wednesday";
+            return "Wednesday"
         case 4:
-            return "Thursday";
+            return "Thursday"
         case 5:
-            return "Friday";
+            return "Friday"
         case 6:
-            return "Saturday";
+            return "Saturday"
         default:
-            return "";
+            return ""
     }
 }
-
-console.log(formeteddate(date0));
-console.log(formeteddate(date1));
-console.log(formeteddate(date2));

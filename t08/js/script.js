@@ -1,31 +1,23 @@
-"use strict";
+function checkBrackets(str) {
 
-function checkBrackets(arg) {
+    let arr = [];
+    //check type of string and check brackets
+    //if the condition is not met returns -1
+    if (!(typeof str === "string") || !str.match(/[()]/)) {
+        return -1
+    } else {
 
-
-  let stack = [];
-
-
-  if (!(typeof arg === "string") || !arg.match(/[()]/)) {
-    return -1;
-  } else {
-
-    for (let i = 0; i <= arg.length; i++) {
-      if (arg.charAt(i) == "(") {
-        stack.push("(");
-      }
-      if (arg.charAt(i) == ")") {
-        stack.push(")");
-      }
+        for (let i = 0; i < str.length; i++) {
+            if (str.charAt(i) == "(") {
+                arr.push("(");
+            } else if (str.charAt(i) == ")") {
+                arr.push(")")
+            }
+        }
+        arr = arr.join("");
+        for (let i = 0; i <= str.length; i++) {
+            arr = arr.replace(/\(\)/, "")
+        }
     }
-
-    stack = stack.join("");
-    
-    for (let i = 0; i <= arg.length; i++) {
-      stack = stack.replace(/\(\)/, "");
-    }
-  }
-
-  return stack.length;
+    return arr.length;
 }
-console.log(checkBrackets('))(('));
